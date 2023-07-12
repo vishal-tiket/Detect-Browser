@@ -17,6 +17,11 @@ function detectBrowser() {
     //   "Edg",
     // ];
 
+    //exceptions
+    // if(userAgent.indexOf('Slack') > -1){
+    //    return false
+    //}
+
     // const isBrowser = userAgentsArray.some((agent) => {
     //   return userAgent.indexOf(agent) > -1;
     // });
@@ -26,6 +31,9 @@ function detectBrowser() {
     /**
      * showing browser name just for POC
      */
+    if (userAgent.indexOf("Slack") > -1) {
+      return "In-App Browser";
+    }
     if (userAgent.indexOf("Firefox") > -1) {
       return "Mozilla Firefox";
     } else if (userAgent.indexOf("Chrome") > -1) {
