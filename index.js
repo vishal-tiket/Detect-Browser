@@ -52,6 +52,9 @@ function detectBrowser() {
 
 if (typeof window !== "undefined") {
   var browser = detectBrowser();
-  document.querySelector("#text").innerHTML = `Web opened in ${browser}`;
+
+  document.querySelector("#text").innerHTML = `Web opened in ${
+    browser === "In-App Browser" ? browser : "Normal Mobile/Desktop Browser"
+  }`;
   document.querySelector("#user-agent").innerHTML = `${navigator.userAgent}`;
 }
